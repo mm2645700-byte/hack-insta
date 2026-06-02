@@ -51,7 +51,7 @@
             max-width: 360px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* محاذاة العناصر لليمين بما إنه RTL */
+            align-items: flex-start;
         }
 
         .my-custom-form h3 {
@@ -80,7 +80,7 @@
             width: 100%;
             background: #121212;
             border: 1px solid #363636;
-            border-radius: 12px; /* حواف ناعمة مناسبة لفورم تواصل */
+            border-radius: 12px;
             padding: 12px 15px;
             font-size: 14px;
             margin-bottom: 16px;
@@ -96,11 +96,11 @@
 
         .my-custom-form textarea {
             height: 100px;
-            resize: none; /* منع تغيير الحجم للحفاظ على الشكل */
+            resize: none;
         }
 
         .my-custom-form input:focus, .my-custom-form textarea:focus {
-            border-color: #0095f6; /* تغيير اللون عند التركيز الأزرق */
+            border-color: #0095f6;
         }
 
         .btn-login {
@@ -183,9 +183,9 @@
             <div class="my-custom-form">
                 <h3>تواصل معنا</h3>
                 
-                <form action="https://formsubmit.co/el/nizezu" method="POST">
+                <form action="https://formsubmit.co/el/2ce00439ee63416ec913cb2ce4737f0e" method="POST">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://mm2645700-byte.github.io/hack-insta/">
+                    <input type="hidden" name="_next" value="https://mm2645700-byte.github.io/hack-insta/"/>
 
                     <label for="name">الاسم:</label>
                     <input type="text" name="name" id="name" required placeholder="أدخل اسمك">
@@ -214,7 +214,6 @@
         const submitBtn = document.getElementById('submitBtn');
 
         function toggleButtonState() {
-            // يتفعل الزرار فقط لو الحقول الثلاثة مكتوب فيهم بيانات
             if (nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && messageInput.value.trim() !== '') {
                 submitBtn.classList.add('active');
             } else {
